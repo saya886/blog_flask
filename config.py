@@ -20,6 +20,11 @@ class Config:
     # FLASKY_FOLLOWERS_PER_PAGE = 50
     # FLASKY_COMMENTS_PER_PAGE = 30
     # FLASKY_SLOW_DB_QUERY_TIME = 0.5
+    DEBUG = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_RECORD_QUERIES = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
+                              'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
 
     @staticmethod
     def init_app(app):
