@@ -14,7 +14,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 @main.route('/test/', methods=['GET','POST'])
 def test():
-    return render_template('markdown_to_html.html')
+    return render_template('edit.html')
 
 
 def user_login_req(f):
@@ -88,19 +88,46 @@ def add():
     """
     添加文章
     """
+    category = Category.query.all()
     form = PostForm()
+    res = Category.query.all()
+    '''
+    动态添加wtforms SelectField 怎么动态添加option项
+    '''
+    form.cate.choices += [(str(r.id), r.cate) for r in res]
     if form.validate_on_submit():
-        post = Post(body=form.body.data)
+        post = Post(name=form.name.data,body=form.body.data,cate_id=form.cate.data)
         db.session.add(post)
         db.session.commit()
+        print(post)
         return redirect(url_for('.index'))
-    return render_template('add.html',form=form)
+    return render_template('add.html',form=form,category=category)
 
 
 @main.route("/detail/<int:id>", methods=['GET','POST'])
 def detail(id):
     post = Post.query.filter_by(id=id).first()
     return render_template('markdown_to_html.html', post=post)
+
+
+@main.route("/edit/<int:id>", methods=['GET','POST'])
+def edit(id):
+    category = Category.query.all()
+    form = PostForm()
+    res = Category.query.all()
+    '''
+    动态添加wtforms SelectField 怎么动态添加option项
+    '''
+    form.cate.choices += [(str(r.id), r.cate) for r in res]
+    print(form.cate.choices)
+    post = Post.query.filter_by(id=id).first()
+    if form.validate_on_submit():
+        post = Post(name=form.name.data, body=form.body.data, cate_id=form.cate.data)
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('.deatil, id=id'))
+    return render_template('edit.html',form=form,post=post,category=category)
+
 
 
 

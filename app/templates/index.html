@@ -39,9 +39,11 @@
                 <a href="/detail/{{ post.id }}">
                     <span class="label label-primary">详情</span>
                 </a>
-                <a href="">
+                {% if session.user %}
+                <a href="/edit/{{ post.id }}">
                     <span class="label label-danger">编辑</span>
                 </a>
+                {% endif %}
             </div>
         </div>
     </li>

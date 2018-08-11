@@ -8,7 +8,7 @@ class Post(db.Model):
     name = db.Column(db.Text)
     body = db.Column(db.Text)
     time_add = db.Column(db.DateTime, index=True, default=datetime.utcnow())
-    cate = db.Column(db.Integer, db.ForeignKey('category.id'))
+    cate_id = db.Column(db.Integer, db.ForeignKey('category.id'))
 
 
 

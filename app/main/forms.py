@@ -5,7 +5,9 @@ from wtforms.validators import DataRequired, Length, Email, Regexp
 
 
 class PostForm(FlaskForm):
-    body = TextAreaField("new aritcle", validators=[DataRequired()])
+    name = TextAreaField("Name", validators=[DataRequired()])
+    body = TextAreaField("content", validators=[DataRequired()], render_kw={"id":"t1","rows":"10"})
+    cate = SelectField('cate', choices=[])
     submit = SubmitField('Submit')
 
 
