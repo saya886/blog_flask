@@ -6,8 +6,8 @@ from flask_login import login_required, current_user
 from flask_sqlalchemy import get_debug_queries
 from . import main
 from .. import db
-from .forms import PostForm, LoginForm
-from ..models import Post, User, Category
+from .forms import PostForm, LoginForm, CommentForm
+from ..models import Post, User, Category, Comment
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -104,10 +104,17 @@ def add():
     return render_template('add.html',form=form,category=category)
 
 
-@main.route("/detail/<int:id>", methods=['GET','POST'])
+@main.route("/detail/<id>", methods=['GET','POST'])
 def detail(id):
+    form = CommentForm()
     post = Post.query.filter_by(id=id).first()
-    return render_template('markdown_to_html.html', post=post)
+    comments = Comment.query.filter_by(post_doc_id=id)
+    if form.validate_on_submit():
+        comment = Comment(body=form.body.data,post_doc_id=id)
+        db.session.add(comment)
+        db.session.commit()
+        return redirect(url_for('.detail', id=id))
+    return render_template('markdown_to_html.html', post=post,comments=comments,form=form)
 
 
 @main.route("/edit/<int:id>", methods=['GET','POST'])
@@ -125,9 +132,8 @@ def edit(id):
         post = Post(name=form.name.data, body=form.body.data, cate_id=form.cate.data)
         db.session.add(post)
         db.session.commit()
-        return redirect(url_for('.deatil, id=id'))
+        return redirect(url_for('.detail, id=id'))
     return render_template('edit.html',form=form,post=post,category=category)
-
 
 
 

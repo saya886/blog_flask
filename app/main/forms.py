@@ -40,3 +40,8 @@ class LoginForm(FlaskForm):
             "class": "btn btn-lg btn-primary btn-block",
         }
     )
+
+
+class CommentForm(FlaskForm):
+    body = TextAreaField("Comment", validators=[DataRequired()])
+    submit = SubmitField('Submit')

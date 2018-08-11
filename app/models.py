@@ -29,3 +29,11 @@ class User(db.Model):
     def check_pwd(self, pwd):
         from werkzeug.security import check_password_hash
         return check_password_hash(self.pwd, pwd)
+
+
+class Comment(db.Model):
+    __tablename__='comment'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    time_add = db.Column(db.DateTime, index=True, default=datetime.utcnow())
+    post_doc_id = db.Column(db.Integer, db.ForeignKey('post.id'))
