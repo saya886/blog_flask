@@ -7,8 +7,14 @@ from flask_sqlalchemy import get_debug_queries
 from . import main
 from .. import db
 from .forms import PostForm, LoginForm
-from ..models import Post, User
+from ..models import Post, User, Category
 from werkzeug.security import generate_password_hash, check_password_hash
+
+
+
+@main.route('/test/', methods=['GET','POST'])
+def test():
+    return render_template('markdown_to_html.html')
 
 
 def user_login_req(f):
@@ -27,14 +33,21 @@ def user_login_req(f):
 
 @main.route('/', methods=['GET','POST'])
 def index():
-    form = PostForm()
-    if form.validate_on_submit():
-        post = Post(body=form.body.data)
-        db.session.add(post)
-        db.session.commit()
-        return redirect(url_for('.index'))
+    cates = Category.query.all()
     posts = Post.query.all()
-    return render_template('index.html',form=form,posts=posts)
+    category = None
+    return render_template('index.html',cates=cates, posts=posts, category=category)
+
+
+@main.route('/cate/<cate>/', methods=['GET','POST'])
+def category(cate):
+    cates = Category.query.all()
+    if cate is None:
+        posts = Post.query.all()
+    else:
+        posts = Post.query.filter_by(cate=cate).all()
+    category = Category.query.filter_by(id=cate).first()
+    return render_template('index.html',cates=cates, posts=posts, category=category)
 
 
 @main.route("/login/", methods=["GET", "POST"])
@@ -82,3 +95,32 @@ def add():
         db.session.commit()
         return redirect(url_for('.index'))
     return render_template('add.html',form=form)
+
+
+@main.route("/detail/<int:id>", methods=['GET','POST'])
+def detail(id):
+    post = Post.query.filter_by(id=id).first()
+    return render_template('markdown_to_html.html', post=post)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

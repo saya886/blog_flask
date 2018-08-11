@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+        <div class="post-content">
+            <div class="post-date">{{ post.time_add }}</div>
+            <p>{{ post.name }}</p>
+            <div class="post-body">
+                {{ post.body }}
+            </div>
+            <div class="post-footer">
+                <a href="">
+                    <span class="label label-danger">编辑</span>
+                </a>
+
+            </div>
+        </div>
+{% endblock %}

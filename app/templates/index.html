@@ -14,36 +14,33 @@
 </div>
 {% endif %}
 
+<p>
+    {% for cate in cates %}
+    <a  href="/cate/{{cate.id}}/"><button style="margin-top: 10px" type="button" class="btn btn-default {% if  category.id == cate.id %}active{% endif %}  ">{{ cate.cate }}</button></a>
+    {% endfor %}
+</p>
+
 
 <ul class="posts">
     {% for post in posts %}
     <li class="post">
         <div class="post-thumbnail">
             <a href="">
-                <img class="img-rounded profile-thumbnail" src="{{ url_for('static', filename='favicon.ico') }}">
+                <img style="width: 35px;length:35px;" class="img-rounded profile-thumbnail" src="{{ url_for('static', filename='jerry.jpeg') }}">
             </a>
         </div>
         <div class="post-content">
             <div class="post-date">{{ post.time_add }}</div>
-            <div class="post-author"><a href=""></a></div>
+            <p>{{ post.name }}</p>
             <div class="post-body">
                 {{ post.body }}
             </div>
             <div class="post-footer">
-                <!--{% if current_user == post.author %}-->
-                <a href="">
-                    <span class="label label-primary">Edit</span>
-                </a>
-                <!--{% elif current_user.is_administrator() %}-->
-                <a href="">
-                    <span class="label label-danger">Edit [Admin]</span>
-                </a>
-                <!--{% endif %}-->
-                <a href="">
-                    <span class="label label-default">Permalink</span>
+                <a href="/detail/{{ post.id }}">
+                    <span class="label label-primary">详情</span>
                 </a>
                 <a href="">
-                    <span class="label label-primary"> Comments</span>
+                    <span class="label label-danger">编辑</span>
                 </a>
             </div>
         </div>

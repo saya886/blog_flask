@@ -5,6 +5,7 @@ from . import db
 class Post(db.Model):
     __tablename__ = 'post'
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text)
     body = db.Column(db.Text)
     time_add = db.Column(db.DateTime, index=True, default=datetime.utcnow())
     cate = db.Column(db.Integer, db.ForeignKey('category.id'))
