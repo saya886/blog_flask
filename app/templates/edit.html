@@ -6,7 +6,7 @@
 {% block page_content %}
 <form action="" method="post"
   class="form" role="form">
-  <input id="csrf_token" name="csrf_token" type="hidden" value="ImQ2MTc5MzZlMWRhNGNlNThiOWNlYjQ4ZTY3ODNhNTIwYzc1ZTdlZDUi.DlBgXQ.SMqLKSIertR9SJRTT9KgLPYLB-4">
+  {{ form.hidden_tag() }}
     <div class="form-group  required"><label class="control-label" for="name">Name</label>
 
           <textarea class="form-control" id="name" name="name" required>{{ post.name }}</textarea>

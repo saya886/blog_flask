@@ -6,7 +6,7 @@ from flask_login import login_required, current_user
 from flask_sqlalchemy import get_debug_queries
 from . import main
 from .. import db
-from .forms import PostForm, LoginForm, CommentForm
+from .forms import PostForm, LoginForm, CommentForm, CateForm
 from ..models import Post, User, Category, Comment
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -25,6 +25,7 @@ def user_login_req(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if "user" not in session:
+            flash("请登录后操作", "err")
             return redirect(url_for(".login"))
         return f(*args, **kwargs)
 
@@ -45,7 +46,7 @@ def category(cate):
     if cate is None:
         posts = Post.query.all()
     else:
-        posts = Post.query.filter_by(cate=cate).all()
+        posts = Post.query.filter_by(cate_id=cate).all()
     category = Category.query.filter_by(id=cate).first()
     return render_template('index.html',cates=cates, posts=posts, category=category)
 
@@ -99,7 +100,7 @@ def add():
         post = Post(name=form.name.data,body=form.body.data,cate_id=form.cate.data)
         db.session.add(post)
         db.session.commit()
-        print(post)
+        form.cate.choices = []
         return redirect(url_for('.index'))
     return render_template('add.html',form=form,category=category)
 
@@ -118,6 +119,7 @@ def detail(id):
 
 
 @main.route("/edit/<int:id>", methods=['GET','POST'])
+@user_login_req
 def edit(id):
     category = Category.query.all()
     form = PostForm()
@@ -126,14 +128,29 @@ def edit(id):
     动态添加wtforms SelectField 怎么动态添加option项
     '''
     form.cate.choices += [(str(r.id), r.cate) for r in res]
-    print(form.cate.choices)
     post = Post.query.filter_by(id=id).first()
     if form.validate_on_submit():
-        post = Post(name=form.name.data, body=form.body.data, cate_id=form.cate.data)
+        post = Post.query.filter_by(id=id).first()
+        post.name = form.name.data
+        post.body = form.body.data
+        post.cate_id = form.cate.data
         db.session.add(post)
         db.session.commit()
-        return redirect(url_for('.detail, id=id'))
+        form.cate.choices = []
+        return redirect(url_for('.detail', id=id))
     return render_template('edit.html',form=form,post=post,category=category)
+
+
+@main.route("/add_cate/", methods=['GET','POST'])
+@user_login_req
+def add_cate():
+    form = CateForm()
+    if form.validate_on_submit():
+        cate = Category(cate= form.body.data)
+        db.session.add(cate)
+        db.session.commit()
+        return redirect(url_for('.index'))
+    return render_template('add_cate.html',form=form)
 
 
 
