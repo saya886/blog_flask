@@ -22,11 +22,11 @@ body {margin-bottom: 150px}
 <nav class="navbar navbar-inverse" role="navigation">
 	<div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="/">L'blog</a>
+		<a class="navbar-brand" href="/">L'log</a>
 	</div>
-	<form class="navbar-form navbar-right" role="search">
+	<form action="/search/" method="POST" class="navbar-form navbar-right" role="search">
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search">
+			<input name="keyword" type="text" class="form-control" placeholder="Search">
 		</div>
 		<button type="submit" class="btn btn-default">搜索</button>
         {% if session.user %}

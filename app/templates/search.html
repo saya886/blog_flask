@@ -4,24 +4,9 @@
 {% block title %}Flasky{% endblock %}
 
 {% block page_content %}
-{% if session.user %}
 <div class="page-header">
-    <h1>Hello, Master!</h1>
+    <h1>结果</h1>
 </div>
-{% else %}
-<div class="page-header">
-    <h1>Hello, Stranger!</h1>
-</div>
-{% endif %}
-
-<p style="margin-bottom: 70px">
-    {% for cate in cates %}
-    <a  href="/cate/{{cate.id}}/"><button style="margin-top: 10px" type="button" class="btn btn-default {% if  category.id == cate.id %}active{% endif %}  ">{{ cate.cate }}</button></a>
-    {% endfor %}
-</p>
-
-
-
     {% for post in posts %}
 <div class="panel panel-success">
     	<div class="panel-heading">
@@ -44,6 +29,4 @@
         </div>
 	</div>
     {% endfor %}
-
-
 {% endblock %}

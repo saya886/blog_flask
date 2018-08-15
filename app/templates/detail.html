@@ -16,23 +16,24 @@
             </div>
         </div>
 
-<ul class="posts">
+
     {% for comment in comments %}
-    <li class="post">
-        <div class="post-thumbnail">
+
+    <div class="panel panel-success">
+
+	<div class="panel-body">
+                <div class="post-thumbnail">
             <a href="">
                 <img style="width: 35px;length:35px;" class="img-rounded profile-thumbnail" src="{{ url_for('static', filename='jerry.jpeg') }}">
             </a>
         </div>
-        <div class="post-content">
-            <div class="post-date">{{ comment.time_add }}</div>
-            <p>{{ comment.name }}</p>
-            <div class="post-body">
-                {{ comment.body }}
+            <p>{{ comment.body }}</p>
+            <div class="post-footer">
+				<span class="label label-success">{{ comment.time_add }}</span>
             </div>
         </div>
-    </li>
+	</div>
     {% endfor %}
-</ul>
+
 
 {% endblock %}

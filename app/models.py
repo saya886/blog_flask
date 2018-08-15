@@ -1,14 +1,38 @@
 from datetime import datetime
 from . import db
-
+from jieba.analyse.analyzer import ChineseAnalyzer
+import flask_whooshalchemyplus
+from app import app
+from flask import url_for
 
 class Post(db.Model):
     __tablename__ = 'post'
+    __searchable__ = ['name', 'desc','body']
+    __analyzer__ = ChineseAnalyzer()
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
+    desc = db.Column(db.Text)
     body = db.Column(db.Text)
     time_add = db.Column(db.DateTime, index=True, default=datetime.utcnow())
     cate_id = db.Column(db.Integer, db.ForeignKey('category.id'))
+
+
+    def to_json(self):
+        json_post = {
+            'url': url_for('api.get_posts', id=self.id),
+            'body': self.body,
+            'name': self.name,
+            'desc': self.desc,
+            'time_add': self.time_add,
+        }
+        return json_post
+
+    @staticmethod
+    def from_json(json_post):
+        body = json_post.get('body')
+        if body is None or body == '':
+            return ('post does not have a body')
+        return Post(body=body)
 
 
 
@@ -37,3 +61,13 @@ class Comment(db.Model):
     body = db.Column(db.Text)
     time_add = db.Column(db.DateTime, index=True, default=datetime.utcnow())
     post_doc_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+
+    def to_json(self):
+        json_post = {
+            'url': url_for('api.get_post_comments', id=self.id),
+            'body': self.body,
+            'time_add': self.time_add,
+        }
+        return json_post
+
+flask_whooshalchemyplus.init_app(app)

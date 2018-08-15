@@ -13,25 +13,24 @@
 <div style="margin-top: 50px">
     {{ wtf.quick_form(form) }}
 </div>
-
-<ul style="margin-top: 100px" class="posts">
+<div style="margin-top: 50px">
+    <h3 style="margin-bottom: 20px">评论</h3>
     {% for comment in comments %}
-    <li class="post">
-        <div class="post-thumbnail">
-            <a href="">
-                <img style="width: 35px;length:35px;" class="img-rounded profile-thumbnail" src="{{ url_for('static', filename='jerry.jpeg') }}">
-            </a>
-        </div>
-        <div class="post-content">
-            <div class="post-date">{{ comment.time_add }}</div>
-            <p>{{ comment.name }}</p>
-            <div class="post-body">
-                {{ comment.body }}
+
+    <div class="panel panel-success">
+            	<div class="panel-heading">
+		<h3 class="panel-title">游客</h3>
+	</div>
+
+	<div class="panel-body">
+            <p>{{ comment.body }}</p>
+            <div class="post-footer">
+				<span class="label label-success">{{ comment.time_add }}</span>
             </div>
         </div>
-    </li>
+	</div>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
 
 {% block scripts %}

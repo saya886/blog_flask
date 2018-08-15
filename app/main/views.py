@@ -81,7 +81,7 @@ def logout():
     # 重定向到home模块下的登录。
     session.pop("user", None)
     session.pop("user_id", None)
-    return redirect(url_for('.login'))
+    return redirect(url_for('.index'))
 
 @main.route("/add/", methods=['GET','POST'])
 @user_login_req
@@ -91,16 +91,15 @@ def add():
     """
     category = Category.query.all()
     form = PostForm()
-    res = Category.query.all()
-    '''
-    动态添加wtforms SelectField 怎么动态添加option项
-    '''
-    form.cate.choices += [(str(r.id), r.cate) for r in res]
+    # res = Category.query.all()
+    # '''
+    # 动态添加wtforms SelectField 怎么动态添加option项
+    # '''
+    # form.cate.choices += [(str(r.id), r.cate) for r in res]
     if form.validate_on_submit():
-        post = Post(name=form.name.data,body=form.body.data,cate_id=form.cate.data)
+        post = Post(name=form.name.data,desc=form.desc.data, body=form.body.data,cate_id=form.cate.data)
         db.session.add(post)
         db.session.commit()
-        form.cate.choices = []
         return redirect(url_for('.index'))
     return render_template('add.html',form=form,category=category)
 
@@ -123,15 +122,11 @@ def detail(id):
 def edit(id):
     category = Category.query.all()
     form = PostForm()
-    res = Category.query.all()
-    '''
-    动态添加wtforms SelectField 怎么动态添加option项
-    '''
-    form.cate.choices += [(str(r.id), r.cate) for r in res]
     post = Post.query.filter_by(id=id).first()
     if form.validate_on_submit():
         post = Post.query.filter_by(id=id).first()
         post.name = form.name.data
+        post.desc = form.desc.data
         post.body = form.body.data
         post.cate_id = form.cate.data
         db.session.add(post)
@@ -153,7 +148,12 @@ def add_cate():
     return render_template('add_cate.html',form=form)
 
 
-
+@main.route("/search/", methods=['GET','POST'])
+def w_search():
+    # keyword = request.form['keyword']
+    keyword = '测试'
+    post = Post.query.whoosh_search(keyword).all()
+    return render_template('search.html',post=post)
 
 
 
