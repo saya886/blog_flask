@@ -2,9 +2,6 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
-import flask_whooshalchemyplus
-from flask_whooshalchemyplus import index_all
-from jieba.analyse.analyzer import ChineseAnalyzer
 
 
 app = Flask(__name__)
@@ -16,8 +13,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 app.config['SECRET_KEY'] = 'rango.lzp'
 app.debug = True
 db = SQLAlchemy(app)
-
-
 bootstrap = Bootstrap(app)
 
 # 不要在生成db之前导入注册蓝图。

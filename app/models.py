@@ -1,14 +1,10 @@
 from datetime import datetime
 from . import db
-from jieba.analyse.analyzer import ChineseAnalyzer
-import flask_whooshalchemyplus
 from app import app
 from flask import url_for
 
 class Post(db.Model):
     __tablename__ = 'post'
-    __searchable__ = ['name', 'desc','body']
-    __analyzer__ = ChineseAnalyzer()
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
     desc = db.Column(db.Text)
@@ -69,5 +65,3 @@ class Comment(db.Model):
             'time_add': self.time_add,
         }
         return json_post
-
-flask_whooshalchemyplus.init_app(app)
