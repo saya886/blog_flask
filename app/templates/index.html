@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
-
+{% import "_macros.html" as macros %}
 {% block title %}Flasky{% endblock %}
 
 {% block page_content %}
@@ -44,6 +44,11 @@
         </div>
 	</div>
     {% endfor %}
-
+<!--分页-->
+{% if pagination %}
+<div  style="text-align: center" class="pagination">
+    {{ macros.pagination_widget(pagination, '.index') }}
+</div>
+{% endif %}
 
 {% endblock %}

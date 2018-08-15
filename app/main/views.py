@@ -34,10 +34,21 @@ def user_login_req(f):
 
 @main.route('/', methods=['GET','POST'])
 def index():
+    page = request.args.get('page', 1, type=int)
+    pagination = Post.query.paginate(
+        page, per_page=8,
+        error_out=False)
+    posts = pagination.items
+    prev = None
+    if pagination.has_prev:
+        prev = url_for('api.get_posts', page=page - 1)
+    next = None
+    if pagination.has_next:
+        next = url_for('api.get_posts', page=page + 1)
+
     cates = Category.query.all()
-    posts = Post.query.all()
     category = None
-    return render_template('index.html',cates=cates, posts=posts, category=category)
+    return render_template('index.html',cates=cates, posts=posts, category=category, pagination=pagination)
 
 
 @main.route('/cate/<cate>/', methods=['GET','POST'])
