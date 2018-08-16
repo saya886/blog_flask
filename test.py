@@ -1,6 +1,7 @@
 from tests.test_basics import basics_test_case
 from tests.test_api import api_test_case
 from tests.test_user import user_test_case
+from tests.test_post import post_test_case
 import os
 import unittest
 from coverage import coverage

@@ -21,7 +21,7 @@ def user_login_req(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if "user" not in session:
-            flash("请登录后操作", "err")
+            flash("please login", "err")
             return redirect(url_for(".login"))
         return f(*args, **kwargs)
 
