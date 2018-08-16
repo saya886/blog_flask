@@ -12,10 +12,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 
-@main.route('/test/', methods=['GET','POST'])
-def test():
-    return render_template('edit.html')
-
 
 def user_login_req(f):
     """
@@ -39,27 +35,22 @@ def index():
         page, per_page=8,
         error_out=False)
     posts = pagination.items
-    prev = None
-    if pagination.has_prev:
-        prev = url_for('api.get_posts', page=page - 1)
-    next = None
-    if pagination.has_next:
-        next = url_for('api.get_posts', page=page + 1)
 
     cates = Category.query.all()
     category = None
-    return render_template('index.html',cates=cates, posts=posts, category=category, pagination=pagination)
+    return render_template('index.html',cates=cates, posts=posts, category=category, pagination_index=pagination)
 
 
 @main.route('/cate/<cate>/', methods=['GET','POST'])
 def category(cate):
+    page = request.args.get('page', 1, type=int)
+    pagination = Post.query.filter_by(cate_id=cate).paginate(
+        page, per_page=8,
+        error_out=False)
+    posts = pagination.items
     cates = Category.query.all()
-    if cate is None:
-        posts = Post.query.all()
-    else:
-        posts = Post.query.filter_by(cate_id=cate).all()
     category = Category.query.filter_by(id=cate).first()
-    return render_template('index.html',cates=cates, posts=posts, category=category)
+    return render_template('index.html',cates=cates, posts=posts, category=category,  pagination_cate=pagination)
 
 
 @main.route("/login/", methods=["GET", "POST"])
@@ -158,13 +149,6 @@ def add_cate():
         return redirect(url_for('.index'))
     return render_template('add_cate.html',form=form)
 
-
-@main.route("/search/", methods=['GET','POST'])
-def w_search():
-    # keyword = request.form['keyword']
-    keyword = '测试'
-    post = Post.query.whoosh_search(keyword).all()
-    return render_template('search.html',post=post)
 
 
 

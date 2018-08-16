@@ -1,6 +1,5 @@
 from datetime import datetime
 from . import db
-from app import app
 from flask import url_for
 
 class Post(db.Model):

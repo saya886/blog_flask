@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
-
+{% import "cate_macros.html" as cate_macros %}
 
 {% block page_content %}
 {% if session.user %}
@@ -45,9 +45,15 @@
 	</div>
     {% endfor %}
 <!--分页-->
-{% if pagination %}
+{% if pagination_index %}
 <div  style="text-align: center" class="pagination">
-    {{ macros.pagination_widget(pagination, '.index') }}
+    {{ macros.pagination_widget(pagination_index, '.index') }}
+</div>
+{% endif %}
+
+{% if pagination_cate %}
+<div  style="text-align: center" class="pagination">
+    {{ cate_macros.pagination_widget(category, pagination_cate, '.category') }}
 </div>
 {% endif %}
 
