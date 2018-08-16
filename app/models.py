@@ -22,13 +22,6 @@ class Post(db.Model):
         }
         return json_post
 
-    @staticmethod
-    def from_json(json_post):
-        body = json_post.get('body')
-        if body is None or body == '':
-            return ('post does not have a body')
-        return Post(body=body)
-
 
 
 class Category(db.Model):
@@ -39,7 +32,6 @@ class Category(db.Model):
 
 class User(db.Model):
     __tablename__ = "user"
-    __table_args__ = {"useexisting": True}
     id = db.Column(db.Integer, primary_key=True)  # 编号
     name = db.Column(db.String(100), unique=True)  # 昵称
     pwd = db.Column(db.String(100))  # 密码

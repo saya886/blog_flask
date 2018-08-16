@@ -3,7 +3,7 @@ from flask import current_app
 from app import create_app
 
 
-class BasicsTestCase(unittest.TestCase):
+class basics_test_case(unittest.TestCase):
     def setUp(self):
         self.app = create_app('testing')
         self.app_context = self.app.app_context()
@@ -12,6 +12,12 @@ class BasicsTestCase(unittest.TestCase):
 
     def test_app_exists(self):
         self.assertFalse(current_app is None)
+        print("test_app_exists    OK")
 
     def test_app_is_testing(self):
-        self.assertTrue(current_app.config['TESTING'])
+        self.assertEqual(False, current_app.config['WTF_CSRF_ENABLED'])
+        print("test_app_is_testing    OK")
+
+
+if __name__ == '__main__':
+    unittest.main()
