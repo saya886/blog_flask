@@ -6,15 +6,12 @@ import click
 import os
 import sys
 
-COV = None
-if os.environ.get('FLASK_COVERAGE'):
-    import coverage
-    COV = coverage.coverage(branch=True, include='app/*')
-    COV.start()
-
 
 app = create_app('development')
+manager = Manager(app)
 migrate = Migrate(app, db)
+manager.add_command('db', MigrateCommand)
+
 
 if __name__ == '__main__':
-    app.run()
+    manager.run()
