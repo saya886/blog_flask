@@ -1,10 +1,10 @@
 # Flask 博客程序　
 
 
-
-##### 版本　V.1 
 在线预览[http://flask.scavenger.top](http://flask.scavenger.top)
-###### Date 18.08.10
+
+
+Flask + Bootstrap3 + Mysql 
 
 ###### 功能
 

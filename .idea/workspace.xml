@@ -3,14 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="04358b21-97c1-41a1-ac7f-2535f8dfd307" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/blog_flask$classs.coverage" NAME="classs Coverage Results" MODIFIED="1534739438396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../flask_blog/flasky" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -67,11 +68,12 @@
     <session id="1094161269">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -81,7 +83,7 @@
           <entry key="ini" value="1" />
           <entry key="md" value="1" />
           <entry key="post" value="1" />
-          <entry key="py" value="54" />
+          <entry key="py" value="55" />
           <entry key="sql" value="1" />
           <entry key="txt" value="1" />
           <entry key="user" value="2" />
@@ -94,7 +96,7 @@
           <entry key="Ini" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="54" />
+          <entry key="Python" value="55" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -103,7 +105,7 @@
           <entry key="html" value="141" />
           <entry key="ini" value="63" />
           <entry key="md" value="27" />
-          <entry key="py" value="744" />
+          <entry key="py" value="750" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -113,148 +115,30 @@
           <entry key="Ini" value="63" />
           <entry key="Markdown" value="27" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="744" />
+          <entry key="Python" value="750" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58458245">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/manage.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-                  <folding>
-                    <element signature="e#0#47#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="210">
-                    <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/blog_flask.ini">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/test_post.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/test_api.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/api/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#0#56#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/test_basics.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/main/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-                  <folding>
-                    <element signature="e#0#27#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/main/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="43" column="21" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#0#27#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../flask_blog/flasky/classs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-end-line="41" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -263,7 +147,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../flask_blog/flasky" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -290,6 +174,7 @@
         <option value="$PROJECT_DIR$/blog_flask.ini" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/../flask_blog/flasky/classs.py" />
       </list>
     </option>
   </component>
@@ -305,37 +190,22 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="293" />
-    <option name="y" value="30" />
-    <option name="width" value="1717" />
-    <option name="height" value="989" />
+    <option name="x" value="196" />
+    <option name="y" value="55" />
+    <option name="width" value="1400" />
+    <option name="height" value="997" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="blog_flask" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_flask" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog_flask" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_flask" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog_flask" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_flask" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="blog_flask" type="b2602c69:ProjectViewProjectNode" />
               <item name="flasky" type="462c0819:PsiDirectoryNode" />
@@ -356,7 +226,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flask_blog/flasky" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../junkrango.github.io/代码" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -382,6 +252,35 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="classs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flasky" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../flask_blog/flasky" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../flask_blog/flasky/classs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.classs" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -397,15 +296,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25773746" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26040554" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18441273" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956093" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -428,6 +326,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../flask_blog/flasky/classs.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../flask_blog/flasky/flasky.py">
@@ -573,6 +482,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog_flask.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -582,7 +511,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_post.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="660">
           <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -592,7 +521,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="243">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -602,7 +531,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="210">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
@@ -629,7 +558,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_basics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -639,31 +568,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="15">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="26" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
+    <entry file="file://$PROJECT_DIR$/../flask_blog/flasky/classs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-end-line="41" selection-end-column="10" />
         </state>
       </provider>
     </entry>
