@@ -62,13 +62,7 @@ def login():
     if form.validate_on_submit():
         data = form.data
         user = User.query.filter_by(name=data["name"]).first()
-        if user:
-            if not user.check_pwd(data["pwd"]):
-                flash("密码错误！", "err")
-                return redirect(url_for(".login"))
-        else:
-            flash("账户不存在！", "err")
-            return redirect(url_for(".login"))
+        
         session["user"] = user.name
         session["user_id"] = user.id
         return redirect(url_for(".index"))
