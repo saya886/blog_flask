@@ -1,7 +1,6 @@
 # Flask 博客程序　
 
 
-在线预览[http://flask.scavenger.top](http://flask.scavenger.top)
 
 
 Flask + Bootstrap3 + Mysql 
@@ -28,7 +27,9 @@ Flask + Bootstrap3 + Mysql
 在Linux 中　Nginx + uwsgi 部署
 
 
-##### install guide
+
+
+# install guide
 
 1. git clone https://github.com/saya886/blog_flask
 
@@ -37,7 +38,7 @@ Flask + Bootstrap3 + Mysql
 3. the project use python3
    pip install -r requirements.txt
 
-4.python manage.py runserver
+4. python manage.py runserver
 
 
 the default username and password
